@@ -4,25 +4,14 @@ const Component = (props) => {
     
     const [error, setError] = useState(false);
 
-    const errorGenerator = () =>{
-      try{
-      setError(true);
+    props.change(setError);
 
-      throw new Error('Uncought error');
-      }
-      catch{
-        console.error(error);
-      }
+    if(error){
+      throw new Error("Error");
     }
 
-  return (
-    <>
-    <button id="gen" onClick={errorGenerator}>Generate Error</button>
-    {    
-        error && <div>{somethingNotDefined}</div>
-    }
-    </>
-  );
+  return <></>;
+  
 };
 
 export default Component;

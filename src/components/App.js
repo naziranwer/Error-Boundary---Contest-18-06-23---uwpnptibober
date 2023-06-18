@@ -2,12 +2,17 @@ import React from "react";
 import "../styles/App.css";
 import Component from "./Component";
 import ErrorBoundary from "./ErrorBoundary";
+
 const App = () => {
+  let setFunc;
 
-  const changeFunc = () =>{
-
+  let changeFunc = (func) =>{
+       setFunc=func;
   };
-
+  
+  const errorGenerator= ()=>{
+    setFunc(true);
+  };
 
   return (
 
@@ -16,7 +21,7 @@ const App = () => {
       <ErrorBoundary>
         <Component change={changeFunc} />
       </ErrorBoundary>
-      {/* <button id="gen" onClick={errorGenerator}>Generate Error</button> */}
+      <button id="gen" onClick={errorGenerator}>Generate Error</button>
     </div>
   );
 };

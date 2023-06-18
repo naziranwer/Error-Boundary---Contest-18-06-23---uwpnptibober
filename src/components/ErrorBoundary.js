@@ -4,19 +4,18 @@ class ErrorBoundary extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = { hasError:false};
+    this.state = { error:false};
   }
 
-  componentDidCatch(error,errorInfo){
-    this.setState({hasError:true});
-    console.error(error,errorInfo);
+  static getDerivedStateFromError(error){
+    return { hasError:true}
   }
  
 
   render() {
     if (this.state.hasError) {
       return (
-        <p id="error-prime-prime">Something went wrong.</p>
+        <p id="error">There is an error in your react app.Please Check again.This message has been generated from error boundary</p>
       );
     }
     return <>{this.props.children}</>;
