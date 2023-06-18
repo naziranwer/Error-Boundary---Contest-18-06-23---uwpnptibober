@@ -4,6 +4,10 @@ import Component from "./Component";
 import ErrorBoundary from "./ErrorBoundary";
 const App = () => {
 
+  const changeFunc = () =>{
+
+  };
+
 
   return (
 
@@ -12,7 +16,7 @@ const App = () => {
       <ErrorBoundary>
         <Component change={changeFunc} />
       </ErrorBoundary>
-      <button id="gen" onClick={errorGenerator}>Generate Error</button>
+      {/* <button id="gen" onClick={errorGenerator}>Generate Error</button> */}
     </div>
   );
 };
